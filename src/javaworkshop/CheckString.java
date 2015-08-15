@@ -5,6 +5,9 @@
  */
 package javaworkshop;
 
+import static java.lang.Integer.parseInt;
+import java.util.Scanner;
+
 /**
  *
  * @author ITNNH-DELL
@@ -18,5 +21,10 @@ public class CheckString {
         }
         return true;
     }
-   
+   public static String Input(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Please Input Number or 'stop' to exit :");
+        String x = sc.next();
+        return x;
+   }
 }
