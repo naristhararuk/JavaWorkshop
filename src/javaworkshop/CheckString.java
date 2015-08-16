@@ -5,7 +5,6 @@
  */
 package javaworkshop;
 
-import static java.lang.Integer.parseInt;
 import java.util.Scanner;
 
 /**
@@ -21,10 +20,13 @@ public class CheckString {
         }
         return true;
     }
-   public static String Input(){
+   public static String Input(String txt){
         Scanner sc = new Scanner(System.in);
-        System.out.print("Please Input Number or 'stop' to exit :");
+        System.out.print(txt);
         String x = sc.next();
+        if(x.toLowerCase().equals("stop")){
+            System.out.println("Exit Program !!");
+        }
         return x;
    }
 }
