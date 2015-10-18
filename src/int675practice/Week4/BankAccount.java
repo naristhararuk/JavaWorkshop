@@ -25,7 +25,7 @@ public class BankAccount {
     }
 
     public BankAccount(int accountId, String name) {
-        this(accountId, "No Name", 0.0);
+        this(accountId, name, 0.0);
     }
 
     public BankAccount(int accountId, String name, double balance) {
@@ -63,11 +63,20 @@ public class BankAccount {
         setBalance(balance + amount);
     }
 
-    public void withdraw(double amount) {
+    public void withdraw(double amount) throws BankAccountException {
         if (balance < amount) {
-            System.out.println("Balance is not enough");
-        } else {
+            throw new BankAccountException("Balance not enough !!!");
+            //System.out.println("Balance is not enough");
+        } else if(amount < 0) {
+            throw new BankAccountException("Witdraw with Negative Balance!!!");
+        }
+        else {
             setBalance(balance - amount);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "BankAccount{" + "accountId=" + accountId + ", name=" + name + ", balance=" + balance + '}';
     }
 }

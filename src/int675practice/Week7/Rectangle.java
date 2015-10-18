@@ -38,7 +38,15 @@ public class Rectangle extends Geometric {
         this.width = width;
         this.height = height;
     }
-
+//    public Rectangle() {
+//        this(1, 1,"Blue");
+//    }
+//
+//    public Rectangle(double width, double height,String color) {
+//        super(color);
+//        this.width = width;
+//        this.height = height;
+//    }
     @Override
     public double getArea() {
         return width*height;

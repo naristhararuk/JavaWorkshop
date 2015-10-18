@@ -17,6 +17,12 @@ public abstract class Geometric {
     public void setColor(String color){
         this.color = color;
     }
+    public Geometric(){
+        this("White");
+    }
+    public Geometric(String color){
+        this.color = color;
+    }
 public abstract double getArea();
 public abstract double getPerimeter();
 }

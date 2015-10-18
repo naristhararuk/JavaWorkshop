@@ -10,7 +10,7 @@ package int675practice.Week4;
  * @author Student Lab
  */
 public class TestBankAccount {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws BankAccountException {
         BankAccount ba = new BankAccount();
         BankAccount bc = new BankAccount(7000700,"Dakota",50000);
         
@@ -19,7 +19,7 @@ public class TestBankAccount {
         ba.setName("Alex");
         ba.setBalance(1020);
         ba.deposit(500);
-        ba.withdraw(1000);
+        ba.withdraw(1000.00);
         System.out.println(ba.getAccountId() +":"+ba.getName() +":"+ ba.getBalance());
         System.out.println(bc.getAccountId() +":"+bc.getName() +":"+ bc.getBalance());
     }

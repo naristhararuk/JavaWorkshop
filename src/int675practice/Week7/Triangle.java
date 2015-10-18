@@ -12,13 +12,21 @@ package int675practice.Week7;
 public class Triangle extends Geometric {
     private double height;
     private double base;
-    public Triangle(){
+        public Triangle(){
         this(4,5);
     }
-    public Triangle(double height,double base){
+    public Triangle(double height,double baser){
         this.height = height;
-        this.base = base;
+        this.base = baser;
     }
+//    public Triangle(){
+//        this(4,5,"Orange");
+//    }
+//    public Triangle(double height,double base,String color){
+//        super(color);
+//        this.height = height;
+//        this.base = base;
+//    }
     @Override
     public boolean equals(Object obj){
         if(obj == null){
@@ -28,11 +36,15 @@ public class Triangle extends Geometric {
             return false;
         }
         final Triangle other = (Triangle)obj;
-        if(Double.doubleToLongBits(this.height) != Double.doubleToLongBits(other.height)){
-            return false;
-        }
-         
-        return true;
+        return Double.doubleToLongBits(this.height) == Double.doubleToLongBits(other.height);
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 11 * hash + (int) (Double.doubleToLongBits(this.height) ^ (Double.doubleToLongBits(this.height) >>> 32));
+        hash = 11 * hash + (int) (Double.doubleToLongBits(this.base) ^ (Double.doubleToLongBits(this.base) >>> 32));
+        return hash;
     }
     @Override
     public double getArea() {

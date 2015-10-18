@@ -16,7 +16,7 @@ public class TestGeometric {
             
             double r = Math.random();
             if(r<0.4){
-                gm[i] = new Circle((int)(Math.random()*10));
+                gm[i] = new Circle((int)(Math.random()*10),"Red");
                 gm[i].setColor("Red");
             }else if(r<0.75){
                 gm[i] = new Rectangle((int)(Math.random()*10),(int)(Math.random()*10));

@@ -11,7 +11,7 @@ package int675practice.Week7;
  */
 public class Circle extends Geometric{
     private double radius;
-
+    
     public double getRadius() {
         return radius;
     }
@@ -20,12 +20,19 @@ public class Circle extends Geometric{
         this.radius = radius;
     }
     
+//    public Circle(){
+//        this(1.0);
+//    }
     public Circle(){
-        this(1.0);
+        this(1.0,"White");
     }
-    public Circle(double radius){
+    public Circle(double radius,String color){
+        super(color);
         this.radius = radius;
     }
+//    public Circle(double radius){
+//        this.radius = radius;
+//    }
     @Override
     public double getArea() {
         return Math.PI*radius*radius;
